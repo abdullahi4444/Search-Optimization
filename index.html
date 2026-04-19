@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce & Throttle Search | Performance Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Search Optimization</h1>
+            <p>Understand the difference between Debouncing and Throttling</p>
+        </header>
+
+        <section class="search-section">
+            <div class="card glass">
+                <div class="label-group">
+                    <h3>Default (Unoptimized)</h3>
+                    <span class="badge red">Fires every keyup</span>
+                </div>
+                <input type="text" id="default-search" placeholder="Type fast...">
+                <div class="info">
+                    API Calls: <span id="default-count" class="count">0</span>
+                </div>
+            </div>
+
+            <div class="card glass">
+                <div class="label-group">
+                    <h3>Debounced</h3>
+                    <span class="badge blue">Fires after pause</span>
+                </div>
+                <input type="text" id="debounce-search" placeholder="Type and pause...">
+                <div class="info">
+                    API Calls: <span id="debounce-count" class="count">0</span>
+                </div>
+            </div>
+
+            <div class="card glass">
+                <div class="label-group">
+                    <h3>Throttled</h3>
+                    <span class="badge green">Fires at steady intervals</span>
+                </div>
+                <input type="text" id="throttle-search" placeholder="Type continuously...">
+                <div class="info">
+                    API Calls: <span id="throttle-count" class="count">0</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="log-section glass">
+            <h2>Activity Log</h2>
+            <div id="log-container" class="log-container">
+                <div class="log-placeholder">Wait for input activity...</div>
+            </div>
+            <button id="clear-logs">Clear Logs</button>
+        </section>
+    </div>
+    <script src="search.js"></script>
+</body>
+</html>
